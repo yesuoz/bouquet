@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Hoş Geldin</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            cursor: pointer; /* Sayfanın tıklanabilir olduğunu göstermek için */
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+            background-color: #00a6d6; /* Arka plan rengini belirli bir renkte tutma */
+        }
+
+        #welcome-message {
+            font-size: 2rem;
+            color: #333;
+            margin: 0 0 20px 0;
+        }
+
+        #flower-bouquet {
+            text-align: center;
+        }
+
+            #flower-bouquet.hidden {
+                display: none;
+            }
+
+            #flower-bouquet img {
+                width: 80%;
+                max-width: 300px;
+                height: auto;
+            }
+
+        #song-box {
+            margin-top: 20px;
+        }
+
+            #song-box a {
+                display: inline-block;
+                padding: 10px 20px;
+                background-color: #007BFF;
+                color: white;
+                text-decoration: none;
+                border-radius: 5px;
+                transition: background-color 0.3s;
+            }
+
+                #song-box a:hover {
+                    background-color: #0056b3;
+                }
+
+        @media (max-width: 828px) {
+            body {
+                font-size: 14px;
+            }
+
+            #welcome-message {
+                font-size: 1.5rem;
+            }
+
+            #song-box a {
+                padding: 8px 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="welcome-message">Hoş Geldin</div>
+    <div id="flower-bouquet" class="hidden">
+        <img src="cicek_buketi.png" alt="Çiçek Buketi">
+        <p>Tenin gibi beyaz, dudaklar gibi kırmızı çiçekler seçtim sana...</p>
+        <div id="song-box">
+            <a href="sarki_linki.mp3" target="_blank">Şarkıyı Dinle</a>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const welcomeMessage = document.getElementById('welcome-message');
+            const flowerBouquet = document.getElementById('flower-bouquet');
+
+            document.body.addEventListener('click', () => {
+                welcomeMessage.style.display = 'none';
+                flowerBouquet.classList.remove('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
